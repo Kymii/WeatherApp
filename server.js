@@ -29,12 +29,12 @@ let projectData = {};
 
 // GET route 
 app.get('/grab', (req, res) => {
-    projectData = req.body;
-    console.log(req);
     res.send(projectData);
 });
 
 //POST route 
-app.post('/add', (req, res) => {
-    res.send('POST received');
+app.post('/save', (req, res) => {
+    res.send('POST Received')
+    projectData = req.body;
+    console.log(req);
 })
