@@ -73,7 +73,6 @@ const updateUI = async () => {
             document.getElementById(card).classList.remove('hide');
         })
 
-        
         document.getElementById('humidity').textContent = last.humidity;
         document.getElementById('wind').textContent = last.wind;
         document.getElementById('pressure').textContent = last.pressure;
