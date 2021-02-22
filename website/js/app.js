@@ -39,7 +39,6 @@ generate.addEventListener('click', (e) => {
 
 const getWeather = async (apiURL, zip, apiKey) => {
     const request = await fetch (apiURL + zip + apiKey)
-
     try {
         const newInfo = await request.json();
         console.log(newInfo);
@@ -49,24 +48,31 @@ const getWeather = async (apiURL, zip, apiKey) => {
     }
 };
 
-const postWeather = async (url , data) => {
-    console.log(data);
+const postWeather = async (url, data) => {
+    console.log(data)
     await fetch(url, {
         method: 'POST',
         credentials: 'same-origin',
-        Headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(data),
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data)
     });
 };
 
 const updateUI = async () => {
     const request = await fetch('/grab');
     try {
-        const last = request.json();
-        console.log(last);
-
-        document.getElementById('temp').textContent = Math.floor(last.temp);
-
+        const last = await request.json();
+        document.getElementById('temp').innerHTML = Math.floor(last.temp);
+        document.getElementById('weather').textContent = last.weather;
+        document.getElementById('city').textContent = last.city;
+        let imglink = 'http://openweathermap.org/img/wn/' + last.icon + '@2x.png';
+        document.getElementById('weatherIcon').innerHTML = `<img src=${imglink}></img>`;
+        document.getElementById('humidity').textContent = last.humidity;
+        document.getElementById('wind').textContent = last.wind;
+        document.getElementById('pressure').textContent = last.pressure;
+        let today = new Date(last.date * 1000).toLocaleDateString('en-US');
+        document.getElementById('date').textContent = today;
+        document.getElementById('userFeelings').textContent = last.feelings;
     } catch(error) {
         console.log('error', error);
     }
