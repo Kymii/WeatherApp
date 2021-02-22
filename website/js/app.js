@@ -67,6 +67,13 @@ const updateUI = async () => {
         document.getElementById('city').textContent = last.city;
         let imglink = 'http://openweathermap.org/img/wn/' + last.icon + '@2x.png';
         document.getElementById('weatherIcon').innerHTML = `<img src=${imglink}></img>`;
+        const card_list = ['card-one', 'card-two', 'card-three'];
+        
+        card_list.forEach(card => {
+            document.getElementById(card).classList.remove('hide');
+        })
+
+        
         document.getElementById('humidity').textContent = last.humidity;
         document.getElementById('wind').textContent = last.wind;
         document.getElementById('pressure').textContent = last.pressure;
