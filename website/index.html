@@ -7,7 +7,7 @@
         <title>Weather App</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="css/main.css">
         <script src="https://kit.fontawesome.com/251697c4f3.js" crossorigin="anonymous"></script>
         <link rel="shortcut icon" href="#">
     </head>
@@ -30,25 +30,28 @@
                 </div>
             </div>
             <!-- bottom content container: weather data  -->
-            <div id="entryHolder" class="bottom-content">
-                <div id="date"></div>
-                <div id="temp"></div>
-                <div id="weather"></div>
-                <div id="city"></div>
-                <div id="weatherIcon"></div>
-                
+            <div class="bottom-content">
+
+                <div id="entryHolder">
+                    <div id="date"></div>
+                    <div id="temp"></div>
+                    <div id="weather"></div>
+                    <div id="city"></div>
+                    <div id="weatherIcon"></div>
+                </div>
+
                 <div id="card-container">
-                    <div id="card-one" class="card">
+                    <div id="card-one" class="card hide">
                         <div id="humidity-image"><i class="fas fa-tint"></i></div>
                         <div id="humidity"></div>
                         <div class="type">Humidity</div>
                     </div>
-                    <div id="card-two" class="card">
+                    <div id="card-two" class="card hide">
                         <div id="wind-image"><i class="fas fa-wind"></i></div>
                         <div id="wind"></div>
                         <div class="type">Wind</div>
                     </div>
-                    <div id="card-three" class="card">
+                    <div id="card-three" class="card hide">
                         <div id="pressure-image"><i class="fas fa-tachometer-alt"></i></div>
                         <div id="pressure"></div>
                         <div class="type">Pressure</div>
