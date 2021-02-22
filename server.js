@@ -33,8 +33,8 @@ app.get('/grab', (req, res) => {
 });
 
 //POST route 
-app.post('/save', (req, res) => {
-    res.send('POST Received')
+app.post('/save', function (req, res) {
+    res.send('POST receieved');
     projectData = req.body;
-    console.log(req);
+    console.log(projectData);
 })
