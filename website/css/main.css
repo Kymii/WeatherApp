@@ -160,6 +160,7 @@ textarea {
     font-size: 28px;
 }
 
+/* tablet media queries  */
 @media (min-width: 768px) {
     #zip,
     #feelings,
@@ -196,6 +197,7 @@ textarea {
     }
 }
 
+/* desktop media queries  */
 @media (min-width: 968px) {
     .app-container {
         width: 50%;
