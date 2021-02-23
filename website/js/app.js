@@ -62,23 +62,23 @@ const updateUI = async () => {
     const request = await fetch('/grab');
     try {
         const last = await request.json();
-        document.getElementById('temp').innerHTML = Math.floor(last.temp);
+        document.getElementById('temp').innerHTML = `${Math.floor(last.temp)}<span>&#176;</span>F`;
         document.getElementById('weather').textContent = last.weather;
         document.getElementById('city').textContent = last.city;
         let imglink = 'http://openweathermap.org/img/wn/' + last.icon + '@2x.png';
-        document.getElementById('weatherIcon').innerHTML = `<img src=${imglink}></img>`;
+        document.getElementById('weatherIcon').innerHTML = `<img alt="weather icon" src=${imglink}></img>`;
         const card_list = ['card-one', 'card-two', 'card-three'];
         
         card_list.forEach(card => {
             document.getElementById(card).classList.remove('hide');
         })
 
-        document.getElementById('humidity').textContent = last.humidity;
-        document.getElementById('wind').textContent = last.wind;
-        document.getElementById('pressure').textContent = last.pressure;
+        document.getElementById('humidity').textContent = `${last.humidity}%`;
+        document.getElementById('wind').textContent = `${last.wind} mph`;
+        document.getElementById('pressure').textContent = `${last.pressure} hpa`;
         let today = new Date(last.date * 1000).toLocaleDateString('en-US');
-        document.getElementById('date').textContent = today;
-        document.getElementById('userFeelings').textContent = last.feelings;
+        document.getElementById('date').textContent = `Todays Date: ${today}`;
+        document.getElementById('userFeelings').textContent = `Mood: ${last.feelings}`;
     } catch(error) {
         console.log('error', error);
     }
