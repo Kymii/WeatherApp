@@ -14,16 +14,16 @@ generate.addEventListener('click', (e) => {
     const feelings = document.getElementById('feelings').value;
 
     // function getWeather fetches api data using given url, zip and key then assigns data to variables
-    getWeather(apiURL, zip, apiKey).then( (weatherData) => {
+    getWeather(apiURL, zip, apiKey).then( (apiWeather) => {
         try {
-        const temp = weatherData.main.temp;
-        const city = weatherData.name;
-        const weather = weatherData.weather[0].description;
-        const icon = weatherData.weather[0].icon;
-        const humidity = weatherData.main.humidity;
-        const wind = weatherData.wind.speed;
-        const pressure = weatherData.main.pressure;
-        const date = weatherData.dt;
+        const temp = apiWeather.main.temp;
+        const city = apiWeather.name;
+        const weather = apiWeather.weather[0].description;
+        const icon = apiWeather.weather[0].icon;
+        const humidity = apiWeather.main.humidity;
+        const wind = apiWeather.wind.speed;
+        const pressure = apiWeather.main.pressure;
+        const date = apiWeather.dt;
         
         // Use POST route '/save' to post data to the server then GET route '/grab' update UI 
         postWeather('/save', {
