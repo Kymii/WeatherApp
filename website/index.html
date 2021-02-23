@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +13,7 @@
     </head>
     <body>
         <!-- app container  -->
-        <div class="app-container">
+        <div role="main"class="app-container">
             <!-- top content container: title, input fields, generate button  -->
             <div class="top-content">
                 <div class="title-container">
@@ -32,32 +32,37 @@
             <!-- bottom content container: weather data  -->
             <div class="bottom-content">
 
+                <div id="date"></div>
                 <div id="entryHolder">
-                    <div id="date"></div>
-                    <div id="temp"></div>
-                    <div id="weather"></div>
-                    <div id="city"></div>
-                    <div id="weatherIcon"></div>
+                    <div class="left">
+                        <div id="temp"></div>
+                        <div id="weather"></div>
+                        <div id="city"></div>
+                    </div>
+                    <div class="right">
+                        <div id="weatherIcon"></div>
+                    </div>
                 </div>
+
+                <div id="userFeelings"></div>
 
                 <div id="card-container">
                     <div id="card-one" class="card hide">
-                        <div id="humidity-image"><i class="fas fa-tint"></i></div>
-                        <div id="humidity"></div>
+                        <div id="humidity-image"><i class="fas fa-tint icon"></i></div>
+                        <div id="humidity" class="output"></div>
                         <div class="type">Humidity</div>
                     </div>
                     <div id="card-two" class="card hide">
-                        <div id="wind-image"><i class="fas fa-wind"></i></div>
-                        <div id="wind"></div>
+                        <div id="wind-image"><i class="fas fa-wind icon"></i></div>
+                        <div id="wind" class="output"></div>
                         <div class="type">Wind</div>
                     </div>
                     <div id="card-three" class="card hide">
-                        <div id="pressure-image"><i class="fas fa-tachometer-alt"></i></div>
-                        <div id="pressure"></div>
+                        <div id="pressure-image"><i class="fas fa-tachometer-alt icon"></i></div>
+                        <div id="pressure" class="output"></div>
                         <div class="type">Pressure</div>
                     </div>
                 </div>
-                <div id="userFeelings"></div>
             </div>
         </div>
 
