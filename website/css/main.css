@@ -6,12 +6,16 @@
     box-sizing: border-box;
 }
 
-body,
+
 input,
 button,
 textarea {
     font-family: 'Saira', sans-serif;
-    background-color: var(--light-blue);
+}
+
+body {
+    background-image: url('../images/bglarge.jpg');
+    background-repeat: no-repeat;
 }
 
 :root {
@@ -73,13 +77,13 @@ textarea {
 /* bottom content styles  */
 
 .bottom-content {
-    /* background: linear-gradient(180deg, #22C1C3 0%, #7BC7C8 100%); */
     border-radius: 0px 0px 10px 10px;
     margin-top: 5px;
     height: 100vh;
 }
 
 #date {
+    margin-top: 20px;
     text-align: center;
     font-size: 24px;
     color: var(--dark);
@@ -149,8 +153,9 @@ textarea {
     color: var(--dark);
 }
 
-.capitalize {
-    text-transform: capitalize;
+#weather,
+#city {
+    font-size: 20px;
 }
 
 #userFeelings {
@@ -199,6 +204,7 @@ textarea {
 
 /* desktop media queries  */
 @media (min-width: 968px) {
+    
     .app-container {
         width: 50%;
         margin: 0 auto;
