@@ -25,7 +25,7 @@ generate.addEventListener('click', (e) => {
         const pressure = weatherData.main.pressure;
         const date = weatherData.dt;
         
-        // USe POST route '/save' post data to the server then using GET route '/grab' update UI 
+        // Use POST route '/save' to post data to the server then GET route '/grab' update UI 
         postWeather('/save', {
             temp,
             city,
